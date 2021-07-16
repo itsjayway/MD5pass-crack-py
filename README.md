@@ -22,4 +22,5 @@ Note: parsed_hashes.txt will be written to the same directory, this is an output
 
 
 # Walkthrough:
+## (before indexing fix)
 ![](walkthrough.gif)
