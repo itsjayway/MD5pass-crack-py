@@ -17,4 +17,9 @@ both in the same directory as main.py
 
 Note: parsed_hashes.txt will be written to the same directory, this is an output containing a list of all the hashes in the [input file](originalfile.txt).
 
+# Updated Output:
+![](capture1.PNG)
+
+
+# Walkthrough:
 ![](walkthrough.gif)
