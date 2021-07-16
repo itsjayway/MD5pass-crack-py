@@ -3,6 +3,7 @@ import os
 
 # main.py is intended to be run from the terminal
 hashes = input("Word list file: ")                                                  # i.e.: rockyou.txt
+
 while True:
     user_pass_file_dir = input("What is the name of the file you want to crack? ")  # i.e.: originalfile.txt
     # note: originalfile.txt is intended to contain lines with format username:password_hash
@@ -37,13 +38,18 @@ with open("outfile.txt") as new_f:
     out_content = new_f.readlines()
 out_content = [x.strip() for x in out_content]      # remove whitespace
 
-i = 0
-for line in content:
-    lst = line.split(":")
-    try:
-        print("%-*s %s" %(20, lst[0], out_content[i].split(":")[1]))    # if out_content[i] exists, print the username and password
-    except:
-        print("%-*s %s" % (20, lst[0], "Not found in table"))           # otherwise print username and "Not found in table"
+hash = []
+for line in out_content:
+    hash += line.split(":")
+
+for line_num in range(len(content)):
+    lst = content[line_num].split(":")
+    # print(lst) #lst[1] stores the hash and hash[1]
+    i = 0
+    if lst[1] in hash:
+        print("%-*s %s" % (20, lst[0], hash[hash.index(lst[1])+1]))
+    else:
+        print("%-*s %s" % (20, lst[0], "Not found in table"))
     i += 1
 f.close()
 new_f.close()
