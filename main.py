@@ -9,8 +9,8 @@ while True:
     # note: originalfile.txt is intended to contain lines with format username:password_hash
     content = []                                                                    # initialize empty array
     try:
-        with open(user_pass_file_dir) as f:                                      # open originalfile.txt
-            content = f.readlines()                                              # populate content arr with a line per index
+        with open(user_pass_file_dir) as f:                                         # open originalfile.txt
+            content = f.readlines()                                                 # populate content arr with a line per index
         content = [x.strip() for x in content]
     except:
         print("Please enter a valid file directory")
@@ -31,12 +31,12 @@ while True:
     call(["./hashcat.exe", "-m", "0", "../" + output_file_name, "../" + hashes, "-o", pot_file, "--potfile-disable"]) # call(...) is as if you're typing the arguments in the cmd line
     break
 
-print("\nUsername%-*sPassword%s" % (20,"",""))      # "table" formatting
+print("\nUsername%-*sPassword%s" % (20,"",""))                                      # "table" formatting
 print("========================================")
-out_content = []                                    # store outfile contents in out_content
+out_content = []                                                                    # store outfile contents in out_content
 with open("outfile.txt") as new_f:
     out_content = new_f.readlines()
-out_content = [x.strip() for x in out_content]      # remove whitespace
+out_content = [x.strip() for x in out_content]                                      # remove whitespace
 
 hash = []
 for line in out_content:
@@ -44,7 +44,7 @@ for line in out_content:
 
 for line_num in range(len(content)):
     lst = content[line_num].split(":")
-    # print(lst) #lst[1] stores the hash and hash[1]
+                                                                                    # print(lst) #lst[1] stores the hash and hash[1]
     i = 0
     if lst[1] in hash:
         print("%-*s %s" % (20, lst[0], hash[hash.index(lst[1])+1]))
