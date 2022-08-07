@@ -1,3 +1,5 @@
+See: https://docs.google.com/document/d/1V2KagSg4GKMaHwCvx8DBp_3mXbaPfqEWxrYoQd3NL4g/edit?usp=sharing
+
 Email:
 To whom it may concern,
 Greetings! I am writing to tell you about some concerns regarding the password policy for your organization. With access to username : password-hash combinations, I was able to decrypt a majority of your users’ passwords. Some of them were very common like ortspoon’s “123456”. The way that I did this was run the hash against a word list and tested to see if their hashes were the same. Since 123456 is already in my growing list, and the hash of 123456 is known, it is simple for anyone to “undo” to get the password in plain text. The encryption method that your organization used was MD5, which is outdated and less secure than more contemporary solutions like SHA-256. 
