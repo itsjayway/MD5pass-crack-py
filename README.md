@@ -1,6 +1,8 @@
 # MD5pass-crack-py
 Created for TheForage/Goldman Sachs Engineering Virtual Program 
 
+[Proposal](https://docs.google.com/document/d/1V2KagSg4GKMaHwCvx8DBp_3mXbaPfqEWxrYoQd3NL4g/edit?usp=sharing)
+
 # How does this work?
 1) Companies will usually store their user information in a database, where the username will be in plain-text, but passwords should be encrypted.
 2) This project imagines a 'cracked database' where the leaked information is stored in a .txt file, each line having a format like: username:password_hash
